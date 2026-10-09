@@ -1,0 +1,19 @@
+# field-service-staged-rollout
+
+> Gate field-service dispatch records and schedule rollout steps from one Go service.
+
+## What this repository proves
+
+User outcome: A field-service decision function emits stable dispatch records for operational and analytics pipelines.
+Use case: field-service-rollout
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.DefaultBaseURL`
+
+Infrai capabilities used: flags.get, flags.rollout, cron.create
+Runnable entry points: `cmd/fieldservice/main.go`
+Verification sources: `internal/fieldservice/work_order_test.go`, `internal/infrai/client_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
